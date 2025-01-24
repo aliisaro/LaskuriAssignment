@@ -22,6 +22,7 @@ class Counter {
     func increment() {
         value += step
         ops += 1
+        
         if value > upperBound {
             value = lowerBound
         }
@@ -30,15 +31,17 @@ class Counter {
     func decrement() {
         value -= step
         ops += 1
+        
         if value < lowerBound {
             value = upperBound
         }
     }
 
     func setStep(_ number: Int) {
-        if number > 0 {
+        if number > upperBound {
+            step = 1
+        } else {
             step = number
         }
     }
-    //comment
 }
